@@ -28,7 +28,7 @@ function embedCode(URL) {
       o.style =
         "position: fixed; right: 15px; bottom: 50px; border-radius: 600px; height: 180px; z-index: 1000000;";
       o.autoplay="true";
-      o.muted="true"
+      o.muted="true";
       o.setAttribute("name", "media");
       o.setAttribute("loop", "");
       o.addEventListener("click", () => {
