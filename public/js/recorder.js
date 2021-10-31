@@ -18,39 +18,29 @@ const videoMediaConstraints = {
 
 // function to return embed code with URL
 function embedCode(URL) {
-  const code = `<script>
-             window.onload = () => {
-  !(function () {
-    var t = (window.contxt = {});
-    t.load = function () {
-      let o = document.createElement("video");
-      o.id = "xfg";
-      o.style =
-        "position: fixed; right: 15px; bottom: 50px; border-radius: 600px; height: 180px; z-index: 1000000;";
-      o.autoplay="true";
-      o.muted="true";
-      o.setAttribute("name", "media");
-      o.setAttribute("loop", "");
-      o.addEventListener("click", () => {
-        if (xfg.muted) xfg.muted = false;
-        else xfg.muted = true;
-      });
+  const code = `  <!-- Start of  Code -->
+ <script>
+  
+  window.onload = () => {
+     !function () {
+      var t = window.contxt = {};
+      t.load = function () {
+        let o = document.createElement('video');o.id = "xfg";o.style = "position: fixed; right: 15px; bottom: 50px; border-radius: 50%; width:150px; height: 150px; z-index: 1000000; border: 2px solid black; background-color: black";o.autoplay="true";o.muted="true"; o.setAttribute("name", "media");o.setAttribute("loop", "");o.addEventListener('click', () => {if (xfg.muted)xfg.muted = false;else xfg.muted = true});
 
-      let s = document.createElement("source");
-      s.src = "${URL}";
-      s.type = "video/mp4";
-      o.appendChild(s);
-      document.body.appendChild(o);
-      
-    };
-  })();
-  contxt.load();
-};
+        let s = document.createElement('source');s.src = "${URL}";s.type = "video/mp4";o.appendChild(s);document.body.appendChild(o);
+        console.log('created')
+      }
+    }();
+    contxt.load();
+  }
 <\/script>
+
+  <!-- End of  Code -->
               `;
 
   return code;
 }
+
 
 function startRecording(thisButton, otherButton) {
   // Access the camera and microphone
