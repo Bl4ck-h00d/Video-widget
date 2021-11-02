@@ -123,6 +123,9 @@ function startRecording(thisButton, otherButton) {
 
       thisButton.disabled = true;
       otherButton.disabled = false;
+    })
+    .catch((error) => {
+    console.log(error);
     });
 }
 
